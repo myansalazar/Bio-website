@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma. Marianne Salazar — Amazon Catalog Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #0F6E56;
+  --teal-light: #E1F5EE;
+  --teal-mid: #1D9E75;
+  --teal-dark: #085041;
+  --cream: #FAF8F4;
+  --cream-mid: #F0EDE6;
+  --ink: #1A1A1A;
+  --ink-mid: #3D3D3D;
+  --ink-light: #6B6B6B;
+  --ink-faint: #9A9A9A;
+  --white: #FFFFFF;
+  --border: rgba(0,0,0,0.09);
+  --border-strong: rgba(0,0,0,0.15);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250,248,244,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+  padding: 0 5%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-light);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--teal); }
+
+.nav-cta {
+  background: var(--teal);
+  color: white !important;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+}
+
+.nav-cta:hover { background: var(--teal-dark) !important; transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  padding: 64px 5% 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-circle {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(29,158,117,0.08) 0%, transparent 70%);
+  top: -100px; right: -100px;
+  pointer-events: none;
+}
+
+.hero-bg-circle2 {
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15,110,86,0.05) 0%, transparent 70%);
+  bottom: 80px; left: -80px;
+  pointer-events: none;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 0.5px solid var(--border-strong);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: var(--ink-mid);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.avail-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--teal-mid);
+  flex-shrink: 0;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: var(--ink-light);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+  display: inline-block;
+}
+
+.btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  border: 0.5px solid var(--border-strong);
+  transition: border-color .2s, transform .15s;
+  display: inline-block;
+}
+
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  width: 340px;
+  height: 400px;
+}
+
+.hero-photo-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--teal-light);
+  border-radius: var(--radius-lg);
+}
+
+.hero-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--teal);
+  font-size: 13px;
+}
+
+.photo-initials {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: white;
+  font-family: var(--serif);
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.stat-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  width: 340px;
+}
+
+.stat-card {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--ink-faint);
+  line-height: 1.4;
+}
+
+/* ── SECTION BASE ── */
+section { padding: 6rem 5%; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+/* ── ABOUT ── */
+#about {
+  background: var(--white);
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-body {
+  font-size: 16px;
+  color: var(--ink-mid);
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+.about-body p + p { margin-top: 1.25rem; }
+
+.about-pull-quote {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--teal-dark);
+  line-height: 1.5;
+  border-left: 3px solid var(--teal-mid);
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+.trait-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.trait-tag {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-weight: 400;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.credential-card {
+  background: var(--cream);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.credential-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--teal);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.credential-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.credential-desc {
+  font-size: 12px;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+/* ── SERVICES ── */
+#services {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.services-header {
+  max-width: 540px;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.service-card {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: border-color .2s, transform .2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { border-color: var(--teal-mid); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(15,110,86,0.08); }
+
+.service-num {
+  font-family: var(--serif);
+  font-size: 3rem;
+  color: var(--cream-mid);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  user-select: none;
+}
+
+.service-title {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: var(--ink-light);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+}
+
+.service-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.service-outcome {
+  font-size: 12px;
+  color: var(--teal-dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.service-outcome::before {
+  content: '→';
+  flex-shrink: 0;
+  color: var(--teal-mid);
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+/* ── EXPERIENCE ── */
+#experience {
+  background: var(--ink);
+  color: white;
+}
+
+#experience .section-label { color: var(--teal-mid); }
+#experience .section-title { color: white; }
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+}
+
+.exp-card {
+  background: rgba(255,255,255,0.04);
+  border: 0.5px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: background .2s;
+}
+
+.exp-card:hover { background: rgba(255,255,255,0.07); }
+
+.exp-period {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--teal-mid);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.exp-company {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.5rem;
+}
+
+.exp-role {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.exp-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-item {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+  font-weight: 300;
+}
+
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--teal-mid);
+}
+
+.exp-hr-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(29,158,117,0.1);
+  border: 0.5px solid rgba(29,158,117,0.2);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* ── TOOLS ── */
+#tools {
+  background: var(--white);
+  border-top: 0.5px solid var(--border);
+}
+
+.tools-header {
+  max-width: 540px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.tools-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tools-group {
+  background: var(--cream);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.tools-group-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.tool-item:last-child { border-bottom: none; }
+
+.tool-name { font-size: 13px; color: var(--ink-mid); }
+
+.tool-bar {
+  width: 64px;
+  height: 4px;
+  background: var(--cream-mid);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tool-fill {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 4px;
+  transition: width 1.2s ease;
+}
+
+/* ── CTA ── */
+#contact {
+  text-align: center;
+  background: var(--teal-light);
+  border-top: 0.5px solid rgba(15,110,86,0.15);
+}
+
+#contact .section-title { color: var(--teal-dark); max-width: 620px; margin: 0 auto 1rem; }
+
+.cta-sub {
+  font-size: 16px;
+  color: var(--teal-dark);
+  opacity: 0.7;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.btn-teal-outline {
+  background: transparent;
+  color: var(--teal-dark);
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--teal);
+  transition: background .2s, color .2s;
+}
+
+.btn-teal-outline:hover { background: var(--teal); color: white; }
+
+.contact-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 13px;
+  color: var(--teal-dark);
+  opacity: 0.7;
+  flex-wrap: wrap;
+}
+
+.contact-detail a { color: inherit; text-decoration: none; }
+.contact-detail a:hover { text-decoration: underline; }
+
+.power-quote {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 0.5px solid rgba(15,110,86,0.2);
+}
+
+.power-quote-text {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--teal-dark);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 1.5rem 5%;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--ink-faint);
+  background: var(--cream);
+}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  #hero { grid-template-columns: 1fr; padding-top: 80px; gap: 2rem; min-height: auto; padding-bottom: 3rem; }
+  .hero-right { align-items: center; }
+  .hero-photo-wrap { width: 280px; height: 320px; }
+  .stat-strip { width: 280px; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .tools-groups { grid-template-columns: 1fr; }
+  section { padding: 4rem 5%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Marianne Salazar</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#contact" class="nav-cta">Hire me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-circle"></div>
+  <div class="hero-bg-circle2"></div>
+  <div class="hero-left">
+    <div class="availability-badge">
+      <span class="avail-dot"></span>
+      Available for new clients
+    </div>
+    <div class="hero-eyebrow">Amazon Catalog Specialist · 3P & 1P Expert</div>
+    <h1 class="hero-headline">
+      Your Amazon Catalog,<br>
+      Optimized for <em>Growth</em> —<br>
+      Not Just Compliance.
+    </h1>
+    <p class="hero-sub">
+      I resolve the listing issues that block visibility, suppress conversions, and stall revenue — across Seller Central and Vendor Central — without opening a support ticket.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Let's fix your catalog</a>
+      <a href="#services" class="btn-ghost">See what I do</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-bg"></div>
+      <div class="hero-photo-placeholder">
+        <img src="corpo outfit pic.png" alt="Ma. Marianne Salazar" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+      </div>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years Amazon ops</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Years HR & process</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3P/1P</div>
+        <div class="stat-label">SC & VC certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="section-label">About me</div>
+      <h2 class="section-title">The operational backbone your brand needs.</h2>
+      <div class="about-body">
+        <p>After 7 years managing HR compliance, payroll systems, and cross-functional processes for major Philippine corporations — I applied that same discipline to Amazon, where catalog errors cost brands real revenue.</p>
+        <p>I specialize in resolving the listing issues that most VAs escalate: phantom listings, suppressed ASINs, variation errors, brand name changes, and FBA fee disputes — all resolved independently, without waiting on Amazon support queues.</p>
+        <div class="about-pull-quote">
+          "Where most VAs manage tasks, I manage outcomes — bringing HR-level process discipline to Amazon catalog operations that directly impact your bottom line."
+        </div>
+        <p>I bring a rare combination: the technical fluency to work inside Amazon's backend systems at scale, and the compliance mindset to ensure every listing is accurate, complete, and protected.</p>
+      </div>
+      <div class="trait-tags">
+        <span class="trait-tag">Detail-oriented</span>
+        <span class="trait-tag">Process-driven</span>
+        <span class="trait-tag">Compliance-first</span>
+        <span class="trait-tag">No-ticket problem solver</span>
+        <span class="trait-tag">Data-backed decisions</span>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="credential-card reveal reveal-delay-1">
+        <div class="credential-icon">🎯</div>
+        <div>
+          <div class="credential-title">Amazon Catalog Operations</div>
+          <div class="credential-desc">3+ years across Seller Central (3P) and Vendor Central (1P) — catalog optimization, flat file management, and issue resolution at scale.</div>
+        </div>
+      </div>
+      <div class="credential-card reveal reveal-delay-2">
+        <div class="credential-icon">🏢</div>
+        <div>
+          <div class="credential-title">Human Resources & Compliance</div>
+          <div class="credential-desc">7 years spanning Healthserv Hospital, Yamaha Motor Phils., HKR Equipment, and COSMOS Bottling. Expert in audits, policy, and cross-team coordination.</div>
+        </div>
+      </div>
+      <div class="credential-card reveal reveal-delay-3">
+        <div class="credential-icon">📊</div>
+        <div>
+          <div class="credential-title">Data & Analytics</div>
+          <div class="credential-desc">Advanced Excel (VLOOKUP, Pivot Tables), Google Sheets, Keepa, Pacvue, and AMZ Monitor — used to diagnose, track, and optimize catalog performance.</div>
+        </div>
+      </div>
+      <div class="credential-card reveal reveal-delay-4">
+        <div class="credential-icon">🎓</div>
+        <div>
+          <div class="credential-title">BS Psychology</div>
+          <div class="credential-desc">Colegio de San Juan de Letran — foundation in behavioral analysis, communication, and structured decision-making.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div class="section-label">What I do</div>
+    <h2 class="section-title">Four ways I protect and grow your Amazon business.</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-num">01</div>
+      <div class="service-title">Catalog Health & Compliance</div>
+      <div class="service-desc">Full-spectrum catalog auditing, issue resolution, and ongoing health monitoring — keeping your listings accurate, complete, and suppression-free.</div>
+      <div class="service-outcomes">
+        <div class="service-outcome">Resolve phantom listings, suppressed ASINs, and variation errors via flat files</div>
+        <div class="service-outcome">Trademark checks and IP compliance to prevent suppression</div>
+        <div class="service-outcome">FBA remeasurement disputes to recover unexpected fee overcharges</div>
+        <div class="service-outcome">Daily audits: pricing accuracy, active offers, listing compliance</div>
+      </div>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-num">02</div>
+      <div class="service-title">Conversion Optimization</div>
+      <div class="service-desc">Data-driven testing and content refinement to improve click-through rates and convert more browsers into buyers.</div>
+      <div class="service-outcomes">
+        <div class="service-outcome">Structured A/B testing on titles, images, and descriptions</div>
+        <div class="service-outcome">In-depth keyword research for high-intent, high-volume terms</div>
+        <div class="service-outcome">Listing creation with full SEO optimization built in</div>
+        <div class="service-outcome">Weekly sales and advertising performance reporting</div>
+      </div>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-num">03</div>
+      <div class="service-title">Brand Content & SEO</div>
+      <div class="service-desc">End-to-end management of branded content — from A+ Content and Brand Stores to crawlable text and alt-text optimization for maximum organic visibility.</div>
+      <div class="service-outcomes">
+        <div class="service-outcome">Publish A+ Content and Brand Stories with SEO-optimized alt-text</div>
+        <div class="service-outcome">Build and maintain Brand Stores with ASIN mapping</div>
+        <div class="service-outcome">Alt-text audits to ensure keywords are indexed by Amazon's crawler</div>
+        <div class="service-outcome">Image and video upload management and PDP monitoring</div>
+      </div>
+    </div>
+    <div class="service-card reveal reveal-delay-4">
+      <div class="service-num">04</div>
+      <div class="service-title">Revenue Protection</div>
+      <div class="service-desc">Proactive measures to protect your brand's pricing integrity, IP, and listing continuity — before problems become revenue losses.</div>
+      <div class="service-outcomes">
+        <div class="service-outcome">Draft and send C&D letters to unauthorized third-party sellers</div>
+        <div class="service-outcome">Analyze unexplained price hikes using Keepa historical data</div>
+        <div class="service-outcome">Submit appeals and Plans of Action without Amazon support</div>
+        <div class="service-outcome">Brand Registry management including brand name changes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="reveal">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">A track record in Amazon's most complex operations.</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card reveal reveal-delay-1">
+        <div class="exp-period">2023 – March 2026</div>
+        <div class="exp-company">Lunge Marketing</div>
+        <div class="exp-role">Amazon Catalog Specialist</div>
+        <ul class="exp-items">
+          <li class="exp-item">Led catalog integrity across multi-brand Seller and Vendor Central accounts</li>
+          <li class="exp-item">Resolved ASIN suppression, phantom listings, and variation errors independently via flat files — without Amazon support</li>
+          <li class="exp-item">Managed full Brand Registry process including brand name changes</li>
+          <li class="exp-item">Drove CTR and CVR improvement through structured A/B content testing</li>
+          <li class="exp-item">Conducted FBA remeasurement disputes to recover fee overcharges</li>
+          <li class="exp-item">Drafted C&D letters to protect brand integrity from unauthorized sellers</li>
+          <li class="exp-item">Compiled listing review reports with actionable catalog optimization insights</li>
+        </ul>
+      </div>
+      <div class="exp-card reveal reveal-delay-2">
+        <div class="exp-period">2022</div>
+        <div class="exp-company">My Amazon Guy</div>
+        <div class="exp-role">Amazon Catalog Specialist</div>
+        <ul class="exp-items">
+          <li class="exp-item">Built and published A+ Content and Brand Stories with SEO alt-text optimization</li>
+          <li class="exp-item">Executed bulk listing uploads via manual entry and flat file methods</li>
+          <li class="exp-item">Monitored image and video PDPs; managed parentage and inventory events</li>
+          <li class="exp-item">Published Brand Stores with full ASIN mapping and vanity URL troubleshooting</li>
+          <li class="exp-item">Created weekly sales and advertising performance reports</li>
+          <li class="exp-item">Enrolled SKUs to Subscribe & Save; created coupons and promotional deals</li>
+        </ul>
+      </div>
+      <div class="exp-card reveal reveal-delay-3">
+        <div class="exp-period">2016 – 2020</div>
+        <div class="exp-company">Freelance</div>
+        <div class="exp-role">Amazon Product Researcher & VA</div>
+        <ul class="exp-items">
+          <li class="exp-item">Conducted product market research for profitable, winning product identification</li>
+          <li class="exp-item">Real Estate VA — managed Keller Williams CRM, MLS listings, and transaction documents via Dotloop</li>
+          <li class="exp-item">Chat support specialist providing accurate real-time product and policy guidance</li>
+          <li class="exp-item">Online English teacher — managed diverse learner assessments and session reporting</li>
+        </ul>
+      </div>
+      <div class="exp-card reveal reveal-delay-4">
+        <div class="exp-period">2001 – 2015</div>
+        <div class="exp-company">Healthserv Hospital · Yamaha Motor Phils. · HKR Equipment · G1 Innovations · COSMOS Bottling</div>
+        <div class="exp-role">Human Resources Specialist</div>
+        <ul class="exp-items">
+          <li class="exp-item">Formulated and implemented company rules, compensation policies, and HR systems</li>
+          <li class="exp-item">Managed payroll system changes in coordination with Finance and payroll vendors</li>
+          <li class="exp-item">Oversaw full recruitment cycle from rank-and-file to managerial level</li>
+          <li class="exp-item">Administered all performance review cycles: annual, half-year, probationary</li>
+        </ul>
+        <div class="exp-hr-note">
+          7 years of compliance-sensitive operations across five corporations — the same auditor's discipline and process rigor now applied to Amazon catalog management.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="tools-header reveal">
+    <div class="section-label">Tools & platforms</div>
+    <h2 class="section-title">Fluent in the full Amazon backend toolkit.</h2>
+  </div>
+  <div class="tools-groups">
+    <div class="tools-group reveal reveal-delay-1">
+      <div class="tools-group-label">Amazon native</div>
+      <div class="tool-item">
+        <span class="tool-name">Seller Central (3P)</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="95%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">Vendor Central (1P)</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="88%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">Brand Registry</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="95%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">Flat File Management</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="92%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">A+ Content & Brand Store</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="90%"></div></div>
+      </div>
+    </div>
+    <div class="tools-group reveal reveal-delay-2">
+      <div class="tools-group-label">Analytics & monitoring</div>
+      <div class="tool-item">
+        <span class="tool-name">Keepa</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="88%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">AMZ Monitor</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="82%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">Pacvue</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="78%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">Helium 10</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="90%"></div></div>
+      </div>
+    </div>
+    <div class="tools-group reveal reveal-delay-3">
+      <div class="tools-group-label">Data & productivity</div>
+      <div class="tool-item">
+        <span class="tool-name">Excel (VLOOKUP, Pivot)</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="90%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">Google Sheets</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="88%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">Google Workspace</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="92%"></div></div>
+      </div>
+      <div class="tool-item">
+        <span class="tool-name">Microsoft Office</span>
+        <div class="tool-bar"><div class="tool-fill" data-width="85%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section id="contact">
+  <div class="section-label" style="text-align:center">Ready to work together?</div>
+  <h2 class="section-title">Let's fix your catalog — and keep it fixed.</h2>
+  <p class="cta-sub">Whether you're dealing with suppressed ASINs, a Brand Registry issue, or a catalog that needs a full audit — I can help. I work with Amazon agencies, brand owners, and e-commerce operators who need execution, not guesswork.</p>
+
+  <div class="power-quote reveal">
+    <div class="power-quote-text">"Most catalog issues have a fix. The question is whether you have someone who knows how to find it — without waiting on Amazon support for weeks."</div>
+  </div>
+
+  <div class="cta-btns">
+  <!-- Hire me now → Opens Gmail compose window -->
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=myansalazar@gmail.com&su=Hiring%20Inquiry%20-%20Amazon%20Catalog%20Specialist&body=Hi%20Marianne%2C%0A%0AI'm%20interested%20in%20hiring%20you%20for%20catalog%20management.%20Please%20let%20me%20know%20your%20availability%20and%20rates.%0A%0AThanks!" target="_blank" rel="noopener noreferrer" class="btn-primary">Hire me now</a>    
+    <!-- Free audit call → YOUR Google Calendar booking link -->
+    <a href="https://calendar.app.google/9PQrfKxqSnd6JK437" target="_blank" rel="noopener noreferrer" class="btn-teal-outline">Book a 15-min audit call</a>
+  </div>
+
+  <div class="contact-details">
+    <span class="contact-detail">📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=myansalazar@gmail.com" target="_blank">myansalazar@gmail.com</a></span>
+    <span class="contact-detail">📱 +63 995 170 7512</span>
+    <span class="contact-detail">📍 Tuy, Batangas, Philippines</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Ma. Marianne Salazar · Amazon Catalog Specialist</span>
+  <span style="color:var(--teal)">Available for remote work worldwide</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Animate tool bars on scroll
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.tool-fill[data-width]').forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.tools-group').forEach(el => {
+  el.querySelectorAll('.tool-fill').forEach(b => b.style.width = '0%');
+  barObserver.observe(el);
+});
+</script>
+</body>
+</html>
